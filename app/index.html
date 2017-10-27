@@ -10,30 +10,25 @@
     <link rel="stylesheet" href="./style.css">
 
     <script type="text/javascript">
-
-        function showColors(){
+        function showColors() {
             var array = new Array();
             array[0] = "Red";
             array[1] = "Blue";
             array[2] = "Green";
             li = document.getElementById("list");
             li_arr = "";
-            for (var i=0; i < array.length; i++){
-               li_arr += "<li>" + array[i] + "</li>";
+            for (var i = 0; i < array.length; i++) {
+                li_arr += "<li>" + array[i] + "</li>";
             }
-           li.innerHTML = li_arr;
+            li.innerHTML = li_arr;
         }
-        
     </script>
-
 </head>
 
 <body>
     <header>
         <div id="web-design">
             <h1>HTML Web Design</h1>
-            <img src="web-designing-banner.jpg" alt="HTML">
-
         </div>
         <nav>
             <ul>
@@ -45,6 +40,7 @@
 
     <section id="section-container">
         <div class="container">
+            <img src="stonehaven.png" alt="background">
             <h1>Professional <span>Web Design</span></h1>
             <p>This is an amazing Website!</p>
             <article>
@@ -100,8 +96,8 @@
         </div>
     </section>
 
-    <input type="button" onclick="showColors()" value="Display Colors"/>
-        <ul id="list"></ul>
+    <input type="button" onclick="showColors()" value="Display Colors" />
+    <ul id="list"></ul>
 
     <footer>
         <h2>This is the Footer section at the bottom</h2>
