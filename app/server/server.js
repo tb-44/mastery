@@ -55,7 +55,7 @@ passport.use(new Auth0Strategy({
         done(null, user);
       });
       
-      //USER COMES FROM SESSION - THIS IS INVOKED FOR EVERY ENDPOINT
+      //USER COMES FROM SESSION - INVOKED FOR EVERY ENDPOINT
       passport.deserializeUser(function(user, done){
         app.get('db').find_session_user(user.user_id).then(user => {
           return done(null, user[0]);
@@ -65,7 +65,7 @@ passport.use(new Auth0Strategy({
       //ENDPOINT -- PASSPORT AUTHENTICATE
       app.get('/auth', passport.authenticate('auth0'));
       
-      //ENDPOINT AUTH CALLBACK
+      //ENDPOINT AUTH CALLBACK DIRECT TO USER DASHBOARD
       app.get('/auth/callback', passport.authenticate('auth0', {
         successRedirect: 'http://localhost:3000/#/dashboard',
         failureRedirect: 'http://localhost:3000/#'
@@ -82,8 +82,8 @@ passport.use(new Auth0Strategy({
       
       //AUTH ENDPOINT (Logout)
       app.get('/auth/logout', (req, res) => {
-        req.logout() //PASSPORT TO TERMINATE LOGIN SESSION
-        return res.redirect(302, 'http://localhost:3000/'); //res.redirect comes from express to redirect user to the given url
+        req.logout() 
+        return res.redirect(302, 'http://localhost:3000/'); 
       })
 
 
