@@ -9,7 +9,7 @@ const initialState = {
 const GET_USER_INFO = "GET_USER_INFO";
 
 //ACTION CREATORS
-//AUTH0 
+//AUTH0 ACTION CREATOR
 export function getUserInfo() {
     return {
         type: GET_USER_INFO,
