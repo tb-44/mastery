@@ -52,6 +52,10 @@ header a:hover {
     color: purple;
 }
 
+h1 + p {
+    color: green;
+}
+
 footer {
     background-color: #A31630;
 }
