@@ -52,15 +52,13 @@ passport.use(new Auth0Strategy({
       
       //SERIALIZE-USER INVOKED ONE TIME TO SET THINGS UP
       passport.serializeUser(function(user, done) {
-        done(null, user);
+          done(null, user);
       });
       
       //USER COMES FROM SESSION - INVOKED FOR EVERY ENDPOINT
       passport.deserializeUser(function(user, done){
-        app.get('db').find_session_user(user.user_id).then(user => {
-          return done(null, user[0]);
+          done(null, user)
         })
-      });
       
       //ENDPOINT -- PASSPORT AUTHENTICATE
       app.get('/auth', passport.authenticate('auth0'));

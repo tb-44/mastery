@@ -1,15 +1,34 @@
 @import url('https://fonts.googleapis.com/css?family=Overlock');
 
 .Landing {
-display: flex;
-justify-content: center;
-align-items: center;
-flex-direction: column;
+width: 100vw;
+height: 100vh;
+}
+
+.landing-background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #3939EC;
+    width: 100%;
+    height: 100%;
+}
+
+.superhero-pic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 20px 0 20px;
 }
 
 img {
-margin: 50px;
-width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: 60%;
 }
 
 input {
@@ -23,15 +42,23 @@ padding-left: 5px;
 }
 
 button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 15px;
-    width: 175px;
+    width: 200px;
     height: 40px;
     border-radius: 5px;
     background: white;
     font-size: 20px;
     font-family: 'Overlock', cursive;
+    border: 2px solid #2E2E53;
 }
 
 button:focus {
     outline: none;
+}
+
+a {
+    text-decoration: none;
 }
