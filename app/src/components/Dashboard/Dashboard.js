@@ -22,7 +22,6 @@ class Dashboard extends Component {
       this.setState({
         superheroes: response.data
       })
-      // console.log(this.state.superheroes)
     })
 
     this.handleSuperheroName = this.handleSuperheroName.bind(this)
@@ -86,6 +85,10 @@ class Dashboard extends Component {
         <input placeholder='Power' onChange={ this.handleSuperheroPower }/>
         <button onClick={ this.addNewSuperhero }>Add</button>
         { heroes }
+
+        <div className="button-div">
+              <a href={ process.env.REACT_APP_LOGOUT }><button className="submit-button">Logout</button></a>
+        </div>
       </div>
     );
   }

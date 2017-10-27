@@ -38,11 +38,11 @@ passport.use(new Auth0Strategy({
       }, function(accessToken, refreshToken, extraParams, profile, done){
        
         const db = app.get('db');
-        db.users.find_user(profile.id).then( user => {
+        db.find_user(profile.id).then( user => {
           if(user[0]) {
             return done(null, user[0]);
           } else {
-            db.users.create_user([profile.displayName, profile.emails[0].value,
+            db.create_user([profile.displayName, profile.emails[0].value,
             profile.picture, profile.id]).then(user => {
               return done(null, user[0]);
             })
@@ -57,7 +57,7 @@ passport.use(new Auth0Strategy({
       
       //USER COMES FROM SESSION - THIS IS INVOKED FOR EVERY ENDPOINT
       passport.deserializeUser(function(user, done){
-        app.get('db').users.find_session_user(user.user_id).then(user => {
+        app.get('db').find_session_user(user.user_id).then(user => {
           return done(null, user[0]);
         })
       });
@@ -67,8 +67,8 @@ passport.use(new Auth0Strategy({
       
       //ENDPOINT AUTH CALLBACK
       app.get('/auth/callback', passport.authenticate('auth0', {
-        successRedirect: 'http://localhost:3000/dashboard',
-        failureRedirect: 'http://localhost:3000/'
+        successRedirect: 'http://localhost:3000/#/dashboard',
+        failureRedirect: 'http://localhost:3000/#'
       }));
       
       //ENDPOINT AUTH0 - CHECKING FOR USER

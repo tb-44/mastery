@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-// import './Dashboard.css';
+import './Landing.css';
 
 class Landing extends Component {
   render() {
     return (
-      <div>
-       This is the LANDING PAGE --for login
+      <div className='Landing'>
+                {/* <img src={logo} alt='logo'/> */}
+                <a href={process.env.REACT_APP_LOGIN}><button>Login</button></a>
       </div>
     );
   }
