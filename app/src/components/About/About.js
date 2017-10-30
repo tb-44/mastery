@@ -1,14 +1,11 @@
-import React, { Component } from 'react';
-// import './Dashboard.css';
+import React from 'react';
 
-class About extends Component {
-  render() {
+const About = (props) => {
     return (
-      <div>
-       This is the ABOUT PAGE
-      </div>
+      <h1>
+       {props.match.params.name}
+      </h1>
     );
   }
-}
 
 export default About;
