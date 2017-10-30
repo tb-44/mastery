@@ -78,7 +78,6 @@ class Dashboard extends Component {
     return (
       <div className="dashboard-container">
         <div className="dash-header">
-          {/* <img src={logo} className="App-logo" alt="logo" /> */}
           <h2>Add SuperHeroes to your board!</h2>
         </div>
         <input placeholder='Name' onChange={ this.handleSuperheroName }/>
@@ -98,4 +97,4 @@ function mapStateToProps(state) {
   return state
 }
 
-export default connect(mapStateToProps, {getUserInfo} )(Dashboard);
+export default connect(mapStateToProps, { getUserInfo } )(Dashboard);
