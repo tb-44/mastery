@@ -1,13 +1,13 @@
 import { getProduct } from '../ducks/products';
 
-// actions
+//CART REDUCER
+//ACTIONS
 const CART_ADD   = 'cart/ADD';
 const CART_REMOVE = 'cart/REMOVE';
 
-// reducer
+//REDUCER
 const initialState = {
-    items: [], // array of product ids
-    currency: 'EUR'
+    items: []
 };
 
 export default function cart(state = initialState, action = {}) {
@@ -35,7 +35,7 @@ function handleCartRemove(state, payload) {
     };
 }
 
-// action creators
+//ACTION CREATORS
 export function addToCart(productId) {
     return {
         type: CART_ADD,
@@ -54,7 +54,7 @@ export function removeFromCart(productId) {
     }
 }
 
-// selectors
+//SELECTORS
 export function isInCart(state, props) {
     return state.cart.items.indexOf(props.id) !== -1;
 }
