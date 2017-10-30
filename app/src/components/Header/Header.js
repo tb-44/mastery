@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-// import headerLogo from './header-logo.png';
 
 class Header extends Component {
 

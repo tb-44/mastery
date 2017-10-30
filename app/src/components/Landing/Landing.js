@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import background from './hero-pic.png';
+import Header from '../Header/Header';
 import Sidenav from './Sidenav';
 import './Landing.css';
 
@@ -30,6 +31,7 @@ class Landing extends Component {
 	render() {
 		return (
 			<div className='Landing'>
+				<Header />
 				<div className="landing-background">
 
 					<img src={background} alt="background" className="superhero-pic" />
