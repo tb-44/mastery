@@ -86,6 +86,18 @@ passport.use(new Auth0Strategy({
 
 
 //ENDPOINTS
+app.get('/api/getsuperheroes', (req, res) => {
+  req.app.get('db').getSuperheroes().then(heroes => {
+      res.send(heroes);
+  })
+})
+
+app.post('/api/addsuperhero', (req, res) => {
+  let { name, power} = req.body;
+  req.app.get('db').addSuperhero([name, power]).then(hero => {
+      res.send(hero)
+  })
+})
 
 
 const port = 3005

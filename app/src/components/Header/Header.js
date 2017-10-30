@@ -9,9 +9,7 @@ class Header extends Component {
 
       <header id="main-header">
         <div className="header-container">
-          
           <div className="header-logo">
-          {/* <img src={headerLogo} alt="" /> */}
           </div>
             
             <nav id="navbar">
