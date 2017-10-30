@@ -8,7 +8,6 @@ import cartReducer from './ducks/cart';
 import productsReducer from './ducks/products';
 import App from './App';
 import productsData from './data/products';
-// import 'bootstrap/dist/css/bootstrap.css';
 import promiseMiddleware from 'redux-promise-middleware';
 
 const combReducer = combineReducers({

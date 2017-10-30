@@ -17,6 +17,7 @@ class Dashboard extends Component {
 
   componentDidMount() {
     this.props.getUserInfo();
+    console.log(this.props)
 
     axios.get('http://localhost:3005/api/getsuperheroes').then(response => {
       this.setState({
